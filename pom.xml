@@ -10,6 +10,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    
         <dependencies>
     
                <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -20,5 +21,144 @@
         </dependency>
 
     </dependencies>
-    
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+                  
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.8</version>
+                <configuration>
+
+                    <linkXref>true</linkXref>
+                    <sourceEncoding>utf-8</sourceEncoding>
+                    <minimumTokens>1</minimumTokens>
+                    <targetJdk>1.7</targetJdk>
+                    <skipEmptyReport>false</skipEmptyReport>
+                    <rulesets>
+                        <ruleset>rulesets/java/basic.xml</ruleset>
+                        <ruleset>rulesets/java/clone.xml</ruleset>
+                        <ruleset>rulesets/java/codesize.xml</ruleset>
+                        <ruleset>rulesets/java/comments.xml</ruleset>
+                        <ruleset>rulesets/java/controversial.xml</ruleset>
+                        <ruleset>rulesets/java/coupling.xml</ruleset>
+                        <ruleset>rulesets/java/design.xml</ruleset>
+                        <ruleset>rulesets/java/empty.xml</ruleset>
+                        <ruleset>rulesets/java/finalizers.xml</ruleset>
+                        <ruleset>rulesets/java/imports.xml</ruleset>
+                        <ruleset>rulesets/java/naming.xml</ruleset>
+                        <ruleset>rulesets/java/optimizations.xml</ruleset>
+                        <ruleset>rulesets/java/strictexception.xml</ruleset>
+                        <ruleset>rulesets/java/strings.xml</ruleset>
+                        <ruleset>rulesets/java/sunsecure.xml</ruleset>
+                        <ruleset>rulesets/java/unnecessary.xml</ruleset>
+                        <ruleset>rulesets/java/unusedcode.xml</ruleset>
+                    </rulesets>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependencies</report>
+                            <report>project-team</report>
+                            <report>mailing-list</report>
+                            <report>cim</report>
+                            <report>issue-tracking</report>
+                            
+                            <report>license</report>
+                            <report>scm</report>
+                           
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+          
+                </configuration>
+            </plugin>
+       
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <linkXRef>true</linkXRef>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                    <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <quiet>true</quiet>
+                    <links>
+                        <link>http://download.oracle.com/javase/1.5.0/docs/api/</link>
+                    </links>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.10</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+                <version>2.0-beta-2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <githubAPIScheme>https</githubAPIScheme>
+                    <githubAPIPort>443</githubAPIPort>
+                </configuration>
+            </plugin>
+     
+                              
+        </plugins>
+        
+    </reporting>
 </project>
