@@ -14,11 +14,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author juans
+ * @author jeffe
  */
 public class Conexion {
-
-    private Connection conexion;
+    private static java.sql.Connection conexion;
+   
 
     public Connection getConexion() {
         return conexion;
@@ -35,7 +35,7 @@ public class Conexion {
     public Conexion() {
         conexion = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/cooperativa2", "root", "espe2016");
 
             if (conexion != null) {
@@ -70,4 +70,5 @@ public class Conexion {
 
         return resultado;
     }
+    
 }
