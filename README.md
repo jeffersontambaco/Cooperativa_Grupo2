@@ -1,7 +1,7 @@
 # GRUPO05_COOPERATIVA2
 COOPERATIVA
 
-#INTEGRANTES: 
+INTEGRANTES: 
 Jefferson Tambaco.
 Alejandro Torres.
 Diego Yandún.
