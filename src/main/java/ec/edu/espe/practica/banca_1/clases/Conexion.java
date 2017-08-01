@@ -12,10 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author jeffe
- */
+
 public class Conexion {
     private static java.sql.Connection conexion;
    
@@ -36,7 +33,7 @@ public class Conexion {
         conexion = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/cooperativa2", "root", "dxyandun");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/cooperativa2", "root", "espe2016");
 
             if (conexion != null) {
                 System.out.println("Conexion Establecida...");
