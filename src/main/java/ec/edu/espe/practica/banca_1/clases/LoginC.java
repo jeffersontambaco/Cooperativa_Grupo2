@@ -27,7 +27,7 @@ public class LoginC {
     public boolean verificarUsuario(String Usuario) {
         try {
             String vUsuario = " ";
-            resultado = conn.ejecutarSQLSelect("select NOMBRE ,CLAVE from Usuario where NOMBRE like '" + Usuario + "'");
+            resultado = conn.ejecutarSQLSelect("select U_NOMBRE ,U_CLAVE from Usuario where U_NOMBRE like '" + Usuario + "'");
             while (resultado.next()) {
                 vUsuario = resultado.getString(1);
             }
@@ -40,7 +40,7 @@ public class LoginC {
     public boolean VerificarContraseña(String Usuario, char[] Contraseña) {
         try {
             String vContraseña = " ";
-            resultado = conn.ejecutarSQLSelect("select NOMBRE ,CLAVE from Usuario where NOMBRE like '" + Usuario + "'");
+            resultado = conn.ejecutarSQLSelect("select U_NOMBRE ,U_CLAVE from Usuario where U_NOMBRE like '" + Usuario + "'");
             while (resultado.next()) {
                 vContraseña = resultado.getString(2);
             }

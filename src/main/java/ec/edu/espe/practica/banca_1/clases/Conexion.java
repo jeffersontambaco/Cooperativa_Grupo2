@@ -35,8 +35,8 @@ public class Conexion {
     public Conexion() {
         conexion = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/cooperativa2", "root", "espe2016");
+            Class.forName("com.mysql.jdbc.Driver");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/cooperativa2", "root", "dxyandun");
 
             if (conexion != null) {
                 System.out.println("Conexion Establecida...");
